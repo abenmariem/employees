@@ -1,0 +1,41 @@
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="First Name">First Name</label>  
+  <div class="col-sm-9">
+  <input id="First Name" name="First Name" type="text"
+         placeholder="Enter your first name here !!!" class="form-control input-md" ng-model="newEmployee.firstName">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="Last Name">Last Name</label>
+  <div class="col-sm-9">
+    <input id="Last Name" name="Last Name" type="text"
+           placeholder="Enter your last name here !!!" class="form-control input-md" ng-model="newEmployee.lastName">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="Age">Age</label>  
+  <div class="col-sm-9">
+  <input id="Age" name="Age" type="text"
+         placeholder="Enter your age here !!!" class="form-control input-md" ng-model="newEmployee.age">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="Salary">Salary</label>  
+  <div class="col-sm-9">
+  <input id="Salary" name="Salary" type="text"
+         placeholder="Enter your salary here !!!" class="form-control input-md" ng-model="newEmployee.salary">
+  </div>
+</div>
+
+<button class="btn btn-primary" type="submit" ng-click="addEmployee(newEmployee)" ng-show="adding" >Save</button >
+<button class="btn btn-danger" type="submit" ng-click="cancelAddEmployee()" ng-show="adding">Cancel</button >
+
+<button class="btn btn-primary" type="submit" ng-click="editEmployee(newEmployee)" ng-show="editing" >Save Editing</button >
+<button class="btn btn-danger" type="submit" ng-click="cancelModifEmployee()" ng-show="editing" >Cancel</button >

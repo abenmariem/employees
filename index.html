@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="employeesManager">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
+    <title> Employees Manager</title>
+</head>
+
+<body ng-controller="employeesCtrl" class="container">
+
+
+<nav class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Employees Manager</a>
+    </div>
+    <button class="btn btn-primary" style="margin-top: 10px" ng-click="showCreateModal()">New Employee</button>
+    <div class="nav navbar-nav">
+
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <div class="alert alert-warning" ng-show="employees.length == 0">
+        <h2>The employees list is empty</h2>
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-md-4" ng-repeat='employee in employees'>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title" ng-bind="employee.firstName +' '+employee.lastName"></h2>
+                </div>
+                <div class="panel-body">
+                    <img ng-src="{{employee.photo}}"> </img>
+                    <h3 ng-bind="'Age: '+employee.age"></h3>
+                    <h3 ng-bind="'Salary: '+(employee.salary | currency)"></h3>
+
+                    <div ng-bind="employee.description">
+
+                    </div>
+
+                </div>
+
+                <div class="panel-footer">
+                    <button class="btn btn-primary" ng-click="showEditForm(employee)">Edit</button>
+                    <button class="btn btn-danger" ng-click="deleteEmployee(employee)">Delete</button>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+
+<script src="node_modules/angular-strap/dist/angular-strap.min.js"></script>
+<script src="node_modules/angular-strap/dist/angular-strap.tpl.min.js"></script>
+
+
+<script src="scripts/app.js?"></script>
+<script src="scripts/Employees.ctrl.js?q=12345678912356891221"></script>
+<script src="scripts/Employees.srv.js?q=123456789106"></script>
+</body>
+
+</html>
